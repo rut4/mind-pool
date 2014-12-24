@@ -1,0 +1,50 @@
+html,
+body,
+.page-content {
+    height: 100%;
+}
+
+.loader-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: hsla(0, 100%, 100%, 0.5);
+}
+
+.dashboard {
+    position: relative;
+
+    .new-idea-button {
+        position: absolute;
+        left: -80px;
+    }
+}
+
+.pool {
+    .idea {
+        text-decoration: none;
+        color: inherit;
+
+        &__i {
+            text-align: left;
+        }
+
+        &__description {
+            text-transform: none;
+        }
+    }
+}
+
+.new-idea {
+    &__name input {
+        width: 100%;
+    }
+
+    &__description {
+        resize: none;
+        width: 500px;
+        height: 100px;
+    }
+}

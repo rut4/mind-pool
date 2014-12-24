@@ -1,0 +1,38 @@
+html,
+body,
+.page-content {
+  height: 100%;
+}
+.loader-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.dashboard {
+  position: relative;
+}
+.dashboard .new-idea-button {
+  position: absolute;
+  left: -80px;
+}
+.pool .idea {
+  text-decoration: none;
+  color: inherit;
+}
+.pool .idea__i {
+  text-align: left;
+}
+.pool .idea__description {
+  text-transform: none;
+}
+.new-idea__name input {
+  width: 100%;
+}
+.new-idea__description {
+  resize: none;
+  width: 500px;
+  height: 100px;
+}

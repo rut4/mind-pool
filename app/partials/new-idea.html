@@ -1,0 +1,17 @@
+<md-dialog class="new-idea">
+    <md-content md-theme="green">
+        <form name="ideaForm" ng-submit="false" novalidate>
+            <md-text-float id="name" class="long new-idea__name" name="name" label="Name" ng-model="idea.name"
+                           required></md-text-float>
+            <!--<md-text-float id="description" class="long" name="description" label="Description" ng-model="idea.description"-->
+                           <!--required></md-text-float>-->
+            <textarea class="new-idea__description" ng-model="idea.description" name="description" id="description"
+                      placeholder="Description" required></textarea>
+            <div class="md-toolbar-tools" layout="row" layout-align="space-around center">
+                <md-button ng-click="createIdea(idea)" class="md-primary md-raised"
+                           ng-disabled="ideaForm.$invalid">Create</md-button>
+                <md-button ng-click="cancelNewIdea()">Cancel</md-button>
+            </div>
+        </form>
+    </md-content>
+</md-dialog>

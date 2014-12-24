@@ -1,0 +1,22 @@
+<section class="dashboard" layout="row" layout-margin layout-align="center start" flex="70">
+    <section class="new-idea-button">
+        <md-button class="md-fab" aria-label="New idea" ng-click="newIdea($event)">
+            <md-icon icon="/images/material-icons/content/svg/design/ic_add_24px.svg"></md-icon>
+        </md-button>
+    </section>
+    <section layout-fill>
+        <md-list>
+            <md-item ng-repeat="idea in ideas | filter: filterIdeaByCurrentUser">
+                <md-item-content layout-margin>
+                    <md-whiteframe class="md-whiteframe-z1" layout-fill layout="column" layout-margin layout-align="start start">
+                        <div class="md-tile-content">
+                            <h3>{{idea.name}}</h3>
+                            <p>{{idea.description}}</p>
+                            <md-button ng-click="removeIdea(idea)">Remove</md-button>
+                        </div>
+                    </md-whiteframe>
+                </md-item-content>
+            </md-item>
+        </md-list>
+    </section>
+</section>

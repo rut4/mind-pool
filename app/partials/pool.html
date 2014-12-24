@@ -1,0 +1,17 @@
+<section class="pool" layout="row" layout-margin layout-align="center start" flex="70" flex-sm="90">
+    <md-list layout-fill layout-margin>
+        <md-item ng-repeat="idea in ideas" flex>
+            <md-item-content layout-margin layout-fill>
+                <md-whiteframe md-ink-ripple class="md-whiteframe-z1 md-button" layout-fill layout="column"
+                               layout-margin layout-align="start start">
+                    <a class="idea" href="#/idea/{{idea.$id}}" layout-fill>
+                        <div class="md-tile-content idea__i">
+                            <h3>{{idea.name}}</h3>
+                            <p class="idea__description">{{idea.description}}</p>
+                        </div>
+                    </a>
+                </md-whiteframe>
+            </md-item-content>
+        </md-item>
+    </md-list>
+</section>

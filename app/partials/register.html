@@ -1,0 +1,16 @@
+<div class="login login_register" layout="column" layout-margin layout-align="center center">
+    <div class="login__logged-in" ng-show="isLoggedIn()">
+        <p class="login__logged-in-message">You're already registered and logged in.</p>
+    </div>
+    <p class="login__error-message">{{registerError}}</p>
+    <form ng-show="!isLoggedIn()" ng-submit="register(user)" name="registerForm" novalidate>
+        <md-text-float id="email" class="long" name="email" label="Email" type="email" ng-model="user.email"
+                       required></md-text-float>
+        <md-text-float id="password" class="long" name="password" label="Password" type="password"
+                       ng-model="user.password" pattern=".{5,}" required></md-text-float>
+        <md-text-float id="confirmPassword" class="long" name="confirmPassword" label="Password confirmation"
+                       type="password" ng-model="user.confirmPassword" pattern=".{5,}" required></md-text-float>
+        <md-button class="md-primary md-raised"
+                   ng-disabled="registerForm.$invalid || user.password != user.confirmPassword">Register</md-button>
+    </form>
+</div>

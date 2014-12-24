@@ -1,0 +1,16 @@
+<div class="login" layout="column" layout-margin layout-align="center center">
+    <div class="login__logged-in" ng-show="isLoggedIn()">
+        <p class="login__logged-in-message">You're already logged in.</p>
+    </div>
+    <p class="login__error-message">{{loginError}}</p>
+    <form ng-show="!isLoggedIn()" ng-submit="logIn(user)" name="loginForm" novalidate>
+        <md-text-float id="email" class="long" name="email" label="Email" type="email" ng-model="user.email"
+                       required></md-text-float>
+        <md-text-float id="password" class="long" name="password" label="Password" type="password"
+                       ng-model="user.password"  pattern=".{5,}" required></md-text-float>
+        <div class="md-toolbar-tools" layout="row" layout-align="space-around center">
+            <md-button class="md-primary md-raised" ng-disabled="loginForm.$invalid">Login</md-button>
+            <md-button href="#/register">Register</md-button>
+        </div>
+    </form>
+</div>

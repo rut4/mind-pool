@@ -11,8 +11,23 @@
                     $scope.idea
                         .$loaded()
                         .finally(function () {
-                            $rootScope.$emit('loadIdeaEnd');
+                            $scope.comments = IdeaService.comments();
+                            $scope.comments
+                                .$loaded()
+                                .finally(function () {
+                                    $rootScope.$emit('loadIdeaEnd');
+                                });
                         });
+                }
+
+                $scope.byCurrentIdea = function (comment) {
+                    return comment.ideaId === $scope.idea.$id;
+                };
+
+                $scope.addComment = function (comment) {
+                    comment.ideaId = $scope.idea.$id;
+                    $scope.comments
+                        .$add(comment);
                 }
             }]);
 })(angular);

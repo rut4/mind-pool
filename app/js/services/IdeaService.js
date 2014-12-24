@@ -5,11 +5,14 @@
         .factory('IdeaService', ['$q', 'FirebaseService', 'Auth',
             function ($q, FirebaseService, Auth) {
                 return {
-                    ideasAsArray: function () {
+                    ideas: function () {
                         return FirebaseService.asArray('ideas');
                     },
                     getIdea: function (id) {
                         return FirebaseService.asObject('ideas/' + id);
+                    },
+                    comments: function () {
+                        return FirebaseService.asArray('comments');
                     }
                 };
             }]);

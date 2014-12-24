@@ -6,7 +6,7 @@
             function ($rootScope, $scope, IdeaService) {
                 $rootScope.$emit('loadIdeasStart');
 
-                $scope.ideas = IdeaService.ideasAsArray();
+                $scope.ideas = IdeaService.ideas();
 
                 $scope.ideas
                     .$loaded()

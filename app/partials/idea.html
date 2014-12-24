@@ -1,5 +1,28 @@
 <section class="idea" layout="column" layout-margin layout-align="start start" flex="70" flex-sm="90">
-    <h2>{{idea.name}}</h2>
-    <p>{{idea.description}}</p>
-
+    <section class="idea__i">
+        <h2 class="idea__name">{{idea.name}}</h2>
+        <p>{{idea.description}}</p>
+    </section>
+    <section class="idea__comments" layout-fill>
+        <md-list layout-fill layout-margin>
+            <md-item ng-repeat="comment in comments | filter:byCurrentIdea" flex>
+                <md-item-content layout-margin layout-fill>
+                    <md-whiteframe md-ink-ripple class="md-whiteframe-z1" layout-fill layout="column"
+                                   layout-margin layout-align="start start">
+                        <div class="md-tile-content comment">
+                            <p class="comment__text">{{comment.text}}</p>
+                            <p class="comment__author">{{comment.author}}</p>
+                        </div>
+                    </md-whiteframe>
+                </md-item-content>
+            </md-item>
+        </md-list>
+        <form ng-submit="addComment(newComment)" ng-show="idea.name" flex layout="column" layout-align="start end">
+            <textarea class="new-comment__text" ng-model="newComment.text" name="text" id="text"
+                      placeholder="Comment text" required layout-fill></textarea>
+            <section layout-margin>
+                <md-button class="md-primary md-raised">Add comment</md-button>
+            </section>
+        </form>
+    </section>
 </section>

@@ -6,7 +6,7 @@
     </section>
     <section layout-fill>
         <md-list>
-            <md-item ng-repeat="idea in ideas | filter: filterIdeaByCurrentUser">
+            <md-item ng-repeat="idea in ideas | filter:byCurrentUser">
                 <md-item-content layout-margin>
                     <md-whiteframe class="md-whiteframe-z1" layout-fill layout="column" layout-margin layout-align="start start">
                         <div class="md-tile-content">

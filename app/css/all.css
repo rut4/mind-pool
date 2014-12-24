@@ -68,6 +68,13 @@ body,
 .pool .idea__description {
   text-transform: none;
 }
+.idea__name {
+  text-transform: uppercase;
+}
+.idea .new-comment__text {
+  resize: none;
+  height: 100px;
+}
 .new-idea__name input {
   width: 100%;
 }

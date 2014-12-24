@@ -7,7 +7,7 @@
 
                 $rootScope.$emit('loadIdeasStart');
 
-                $scope.ideas = IdeaService.ideasAsArray();
+                $scope.ideas = IdeaService.ideas();
                 $scope.ideas
                     .$loaded()
                     .finally(function () {
@@ -83,7 +83,7 @@
                         });
                 };
 
-                $scope.filterIdeaByCurrentUser = function (idea) {
+                $scope.byCurrentUser = function (idea) {
                     return idea.uid === Auth.getUserId();
                 };
             }]);

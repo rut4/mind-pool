@@ -41,7 +41,7 @@
                             },
                             function () {
                                 $mdToast.show({
-                                    template: '<md-toast>:( An error occurred while saving the idea</md-toast>',
+                                    template: '<md-toast>:( An error occurred while saving the idea.</md-toast>',
                                     position: 'top right'
                                 });
                             }

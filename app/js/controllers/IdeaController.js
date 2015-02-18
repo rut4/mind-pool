@@ -2,8 +2,9 @@
     'use strict';
 
     angular.module('poolApp.controllers')
-        .controller('IdeaController', ['$scope', '$rootScope', '$routeParams', 'IdeaService', 'LoaderService',
-            function ($scope, $rootScope, $routeParams, IdeaService, _) {
+        .controller('IdeaController', [
+            '$scope', '$rootScope', '$routeParams', '$mdToast', 'IdeaService', 'LoaderService',
+            function ($scope, $rootScope, $routeParams, $mdToast, IdeaService, _) {
                 if ($routeParams.ideaId) {
                     $rootScope.$emit('loadIdeaStart');
 
@@ -25,9 +26,28 @@
                 };
 
                 $scope.addComment = function (comment) {
+                    $rootScope.$emit('addCommentStart');
+
                     comment.ideaId = $scope.idea.$id;
                     $scope.comments
-                        .$add(comment);
+                        .$add(comment)
+                        .then(
+                            function () {
+                                $mdToast.show({
+                                    template: '<md-toast>The comment was added successfully!</md-toast>',
+                                    position: 'top right'
+                                });
+                            },
+                            function () {
+                                $mdToast.show({
+                                    template: '<md-toast>The comment was added successfully!</md-toast>',
+                                    position: 'top right'
+                                });
+                            }
+                        )
+                        .finally(function () {
+                            $rootScope.$emit('addCommentEnd');
+                        });
                 }
             }]);
 })(angular);
